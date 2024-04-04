@@ -44,33 +44,71 @@ aside{
     margin-bottom: 10vh;
     border-radius: 0 30px  30px 0;
     box-shadow: 10px 10px 30px ;
-    transition: all 1.5s linear;
+    transition: all 1s linear;
 }
 aside:hover{
     box-shadow: 10px 10px 30px #005e5e;
     width: 30vh;
 }
-aside:hover ul li a{
+aside:hover ul.buttons li a{
     opacity: 1;
 }
-aside ul{
+aside:hover ul.icons li{
+    animation: icons .5s linear;
+    animation-delay: 1s;
+}
+@keyframes icons {
+    0%{
+        transform: rotate(-10deg);
+    } 
+    12.5%{
+        transform: rotate(10deg);
+    }    
+    25%{
+        transform: rotate(-10deg);
+    }    
+    37.5%{
+        transform: rotate(10deg);
+    }    
+    50%{
+        transform: rotate(-10deg);
+    }    
+    62.5%{
+        transform: rotate(10deg);
+    }    
+    75%{
+        transform: rotate(-10deg);
+    }    
+    87.5%{
+        transform: rotate(10deg);
+    }       
+    100%{
+        transform: rotate(0deg);
+    }    
+}
+aside ul.icons{
     font-size: 30px;
     list-style: none;
 }
-aside ul li h1{
-    font-size: 30px;
+aside ul.icons li{
+    margin-bottom: 21vh;
 }
-aside ul li{
-    margin-bottom: 15vh;
+aside ul.buttons{
+    font-size: 20px;
+    list-style: none;
 }
-aside ul li a{
+aside ul.buttons li{
+    margin-bottom: 23vh;
+}
+aside ul.buttons li a{
     text-decoration: none;
     font-weight: 200;
     color: black;
+    font-size: 30px;
     opacity: 0;
     transition: all .5s linear;
 }
-aside ul li a:hover{
+aside ul.buttons li a:hover{
     box-shadow: -10px -10px 30px #007b7b;
     border-radius: 5px;
     padding: 5px;
@@ -190,20 +228,25 @@ article{
 
 footer{
     grid-area: foot;
-    height: 20vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 10vh;
+    height: 25vh;
     border-radius:30px 30px 0 0;
     box-shadow: -10px -10px 30px ;
-    transition: all 1s linear;
+    transition: all .5s linear;
 }
 footer:hover{
-    height:25vh;
+    height: 30vh;
     box-shadow: -10px -10px 30px #005e5e;
 }
 footer:hover .contact .all{
     opacity: 1;
+}
+footer:hover .contact ul.ewttt{
+    transform: translate(-25%);
+}
+footer:hover .contact ul.ewttt li{
+    animation: icons .5s linear;
+    animation-delay: 1s;
 }
 footer:hover .contact h1{
     font-size: 50px;
@@ -214,10 +257,18 @@ footer .contact{
     flex-direction: column;
 }
 footer .contact h1{
-    margin-top: 5vh;
     font-size: 80px;
     text-align: center;
     transition: all 1s linear;
+}
+footer .contact ul.ewttt{
+    display: flex;
+    list-style:none;
+    justify-content: center;
+    transition: all 1s linear;
+}
+footer ul.ewttt li{
+    margin: 20px 75px 0;
 }
 footer .contact .all{
     opacity: 0;
@@ -370,6 +421,28 @@ article .desc .container-four{
     article{
         display: flex;
         flex-direction: column;
+        width: auto;
+    }
+    article{
+        padding: 20px;
+    }
+    .container .content .img img{
+        width: 210px;
+        height: 400px;
+    }
+    .container .content .img:hover{
+        transform: rotate(-5deg);
+    }
+    .container .content .img:hover ~ .img{
+        translate: 1.5rem;
+    }
+    .container-two .content-two .img img{
+        width: 210px;
+        height: 400px;
+    }
+    .container-three .card .img img{
+        width: 210px;
+        height: 400px;
     }
     article .desc{
         display: flex;
@@ -377,7 +450,6 @@ article .desc .container-four{
         width: auto;
     }
     article .desc .info{
-
         width: auto;
         display: flex;
         flex-direction: column;
@@ -392,25 +464,29 @@ article .desc .container-four{
         height: 50px;
         border-radius: 30px ;
         box-shadow: -10px -10px 30px ;
-        transition: all 1s linear;
+        transition: all .5s linear;
     }
     aside:hover{
         box-shadow: 10px 10px 30px #005e5e;
         border-radius:0 0 30px 30px ;
-        height: 20vh;
+        height: 15vh;
         width: auto;
     }
-    aside ul{
+    aside ul.buttons{
+        display: flex;
+        font-size: 20px;
+    }
+    aside ul.buttons li{
+        margin: 0 40px 0;
+    }
+    aside ul.icons{
         font-size: 20px;
         display: flex;
         transition: all 1.5s linear;
-
     }
-    aside ul li{
-        margin: 30px;
-    }
-    aside ul li{
-        margin-bottom: 2vh;
+    aside ul.icons li 
+    {
+        margin:0 70px 0px ;
     }
     article .desc .info .ceo .img img{
         height: 420px;
@@ -428,8 +504,11 @@ article .desc .container-four{
         width: 420px;
         height: 280px;
     }
+    footer{
+        transition: all .5s linear;
+    }
     footer:hover{
-        height:30vh;
+        height:22vh;
     }
     footer .contact h1{
         margin-top: 70px;
@@ -437,14 +516,26 @@ article .desc .container-four{
     }
     footer:hover .contact h1{
         font-size: 30px;
-        margin-top: 5vh;
+    }
+    footer:hover .contact ul.ewttt{
+        transform: translate(-23%);
+    }
+    footer .contact ul.ewttt li{
+        transition: all 1s linear;
+    }
+    footer:hover .contact ul.ewttt li{
+        margin: 0 45px 0;
+    }
+    footer .contact ul.ewttt li img{
+        transition: all 1s linear;
+    }
+    footer:hover .contact ul.ewttt li img{
+        width: 20px;
     }
     footer .contact .all{
-        font-size: 20px;
-        
+        font-size: 20px; 
     }
     footer .contact .all ul{
-        margin: 0;
         margin-bottom: 20px;
     }
     footer .contact .all ul li{
@@ -456,20 +547,31 @@ article .desc .container-four{
         margin-top: 10px;
     }
 }
-@media screen and (max-width:800px){
+
+@media screen and (max-width:875px){
     footer:hover{
-        height:30vh;
+        height:40vh;
     }
     footer .contact h1{
-        margin-top: 70px;
+        margin-top: 1vh;
         font-size: 50px;
     }
     footer:hover .contact h1{
-        font-size: 30px;
-        margin-top: 5vh;
+        font-size: 50px;
+    }
+    footer:hover .contact ul{
+        transform: translate(0);
+    }
+    footer:hover ul.ewttt li img{
+        margin:10px 10px 0;
+    }
+    footer ul.ewttt li{
+        margin:10px 40px 0;
+    }
+    footer:hover .contact ul.ewttt li img{
+        width: 30px;
     }
     footer .contact .all{
-        font-size: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -479,17 +581,20 @@ article .desc .container-four{
         margin-bottom: 20px;
     }
     footer .contact .all ul li{
-        margin: 10px;
+        margin: 20px;
+        font-size: 24px;
     }
     footer .contact .all .friends{
-        font-size: 20px;
+        font-size: 24px;
         margin: 0;
     }
     footer .contact .all .friends a{
         text-align: center;
+        font-size: 30px;
     }
 }
-@media screen and (max-width:800px){
+
+@media screen and (max-width:700px){
     .container-four .card .img img{
         height: 220px;
         width: 140px;
@@ -512,5 +617,78 @@ article .desc .container-four{
     article .desc .info .doc p{
         font-size: 20px;
         margin-bottom: 50px;
+    }
+    article{
+        padding: 20px;
+    }
+    .container .content .img img{
+        width: 120px;
+        height: 300px;
+    }
+    .container .content .img:hover{
+        transform: rotate(-5deg);
+    }
+    .container .content .img:hover ~ .img{
+        translate: 1.5rem;
+    }
+    .container-two .content-two .img img{
+        width: 120px;
+        height: 300px;
+    }
+    .container-three .card .img img{
+        width: 120px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:910px){
+    .container-four .card .img img{
+        height: 220px;
+        width: 140px;
+    }
+    .container-four .card:nth-child(3) .img img{
+        width: 320px;
+        height: 180px;
+    }
+    article .desc .info .ceo .img img{
+        height: 220px;
+        width: 140px;
+    }
+    article .desc .info .doc h1{
+        font-size: 50px;
+    }
+    article .desc .info .doc h3{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    article .desc .info .doc p{
+        font-size: 20px;
+        margin-bottom: 50px;
+    }
+    article{
+        padding: 20px;
+    }
+    .container .content .img img{
+        width: 150px;
+        height: 330px;
+    }
+    .container .content .img:hover{
+        transform: rotate(-5deg);
+    }
+    .container .content .img:hover ~ .img{
+        translate: 1.5rem;
+    }
+    .container-two .content-two .img img{
+        width: 150px;
+        height: 330px;
+    }
+    .container-three .card .img img{
+        width: 150px;
+        height: 330px;
+    }
+}
+@media screen and (max-width:930px) {
+    footer:hover .contact ul.ewttt{
+        transform: translate(-20%);
     }
 }
