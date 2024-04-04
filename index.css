@@ -543,7 +543,7 @@ article .desc .container-four{
 
 @media screen and (max-width:700px){
     footer:hover{
-        height:50vh;
+        height:30vh;
     }
     footer .contact h1{
         margin-top: 1vh;
